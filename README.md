@@ -1,4 +1,4 @@
-# disturber
+# disturb
 
 The modals used to ask users for confirmation or information are normally
 declared in the markup of the page. This however just *pollutes* the markup. And
