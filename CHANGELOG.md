@@ -1,5 +1,11 @@
 # disturb
 
+## 1.0.8
+
+### Patch Changes
+
+- readme corrections
+
 ## 1.0.7
 
 ### Patch Changes
