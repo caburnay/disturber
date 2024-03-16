@@ -1,6 +1,6 @@
 {
   "name": "disturb",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "files": [
     "dist/**"
@@ -12,6 +12,10 @@
     "publish": "pnpm run build && pnpm changeset && pnpm changeset version && pnpm changeset publish"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caburnay/disturber.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
