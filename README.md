@@ -118,7 +118,7 @@ export function Counter({ start }: { start: number }) {
 }
 ```
 
-![Screen Recording](https://github.com/caburnay/disturber/assets/3245568/c1681dd8-d1f9-4ea1-8b6c-20e549e8efee)
+![Screen Recording](https://github.com/caburnay/disturber/assets/3245568/e0ce4027-7aee-4c5c-bcbc-1b15b6a167f8)
 
 The markup of the above component doesn't know about the modal, it's just
 showing the button with the current value of the number, yet, when interacting
