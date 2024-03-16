@@ -1,5 +1,96 @@
 # disturb
 
+Separate modals from the main markup of your app.
+
+## Getting started
+
+**Install**
+
+```sh
+$ npm install disturb
+```
+
+**Include Disturbers in the client app**. This is the controller of the
+"disturbers" that will be displayed.
+
+```tsx
+// layout.tsx
+import { Disturbers } from 'disturb';
+
+export default function Layout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+      </body>
+      <Disturbers /> {** <---- HERE **}
+    </html>
+  )
+}
+```
+
+**Create a disturber**. In this example, we're creating a confirm modal with
+customizable message, confirm and cancel labels.
+
+```tsx
+// modals/confirm.tsx
+import { createDisturber } from 'disturb';
+
+export const confirm = createDisturber<boolean, {
+  message: string;
+  confirmLabel: string;
+  cancelLabel: string;
+}>(
+  function ConfirmModal({
+    confirmWith,
+    cancel,
+    open,
+    message,
+    confirmLabel,
+    cancelLabel
+  }) {
+    return (
+      <div>
+        <div>
+          <span>{message}</span>
+        </div>
+        <div>
+          <button onClick={() => confirmWith(false)}>{cancelLabel}</button>
+          <button onClick={() => confirmWith(true)}>{confirmLabel}</button>
+        </div>
+      </div>
+    )
+  }
+)
+```
+
+**Use the disturber**
+
+```tsx
+// counter.tsx
+import { confirm } from './modals/confirm';
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+  const onclick = async () => {
+    if (await confirm({
+      message: 'What do you want?',
+      confirmLabel: 'inc',
+      cancelLabel: 'dec'
+    })) {
+      setCount(count + 1);
+    } else {
+      setCount(count - 1);
+    }
+  }
+  return (
+    <button onClick={onclick}>Count: {count}</button>
+  )
+}
+```
+
+## Motivation
+
 The modals used to ask users for confirmation or information are normally
 declared in the markup of the page. This however just *pollutes* the markup. And
 if we think about it carefully, modals should actually part of the *logic*, not
@@ -54,7 +145,7 @@ the rendered modals when calling a "disturber".
 The `confirm` disturber in the above code example is defined below:
 
 ```tsx
-import { createDisturber } from 'disturber';
+import { createDisturber } from 'disturb';
 
 export const confirm = createDisturber<boolean, { message: string }>(
   function ConfirmDialog({ confirmWith, cancel, open, message }) {
