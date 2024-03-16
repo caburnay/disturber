@@ -24,7 +24,7 @@ export default function Layout({ children }) {
       <body>
         {children}
       </body>
-      <Disturbers /> {** <-- HERE **}
+      <Disturbers /> {/* <-- HERE */}
     </html>
   )
 }

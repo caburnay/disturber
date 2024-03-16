@@ -1,5 +1,11 @@
 # disturb
 
+## 1.0.9
+
+### Patch Changes
+
+- properly comment sample code
+
 ## 1.0.8
 
 ### Patch Changes
