@@ -1,5 +1,11 @@
 # disturb
 
+## 1.0.6
+
+### Patch Changes
+
+- screencast link in readme
+
 ## 1.0.5
 
 ### Patch Changes

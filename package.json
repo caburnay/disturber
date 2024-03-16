@@ -1,6 +1,6 @@
 {
   "name": "disturb",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "files": [
     "dist/**"
@@ -8,7 +8,8 @@
   "module": "dist/src/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs",
+    "publish": "pnpm run build && pnpm changeset && pnpm changeset version && pnpm changeset publish"
   },
   "author": "",
   "license": "MIT",
