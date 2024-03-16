@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { useDisturbers } from './use-disturbers';
 import { Disturber } from './utils';

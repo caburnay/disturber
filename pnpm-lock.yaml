@@ -38,6 +38,9 @@ devDependencies:
   rollup-plugin-postcss:
     specifier: ^4.0.2
     version: 4.0.2(postcss@8.4.35)
+  rollup-plugin-preserve-directives:
+    specifier: ^0.4.0
+    version: 0.4.0(rollup@4.13.0)
   tslib:
     specifier: ^2.6.2
     version: 2.6.2
@@ -2600,6 +2603,16 @@ packages:
       style-inject: 0.3.0
     transitivePeerDependencies:
       - ts-node
+    dev: true
+
+  /rollup-plugin-preserve-directives@0.4.0(rollup@4.13.0):
+    resolution: {integrity: sha512-gx4nBxYm5BysmEQS+e2tAMrtFxrGvk+Pe5ppafRibQi0zlW7VYAbEGk6IKDw9sJGPdFWgVTE0o4BU4cdG0Fylg==}
+    peerDependencies:
+      rollup: 2.x || 3.x || 4.x
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
+      magic-string: 0.30.8
+      rollup: 4.13.0
     dev: true
 
   /rollup-pluginutils@2.8.2:
